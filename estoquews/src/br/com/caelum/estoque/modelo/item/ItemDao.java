@@ -50,7 +50,7 @@ public class ItemDao {
 	}
 	
 	private boolean itemPossuiNome(Item item, String nome) {
-		return item.getNome().contains(nome);
+		return item.getNome().toUpperCase().contains(nome.toUpperCase());
 	}
 
 	private boolean itemPossuiTipo(Item item, String tipo) {
