@@ -1,15 +1,13 @@
 package br.com.caelum.estoque.ws;
 
-import java.util.List;
+import br.com.caelum.estoque.modelo.item.*;
+import br.com.caelum.estoque.modelo.usuario.TokenUsuario;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
-import javax.xml.ws.RequestWrapper;
-import javax.xml.ws.ResponseWrapper;
-
-import br.com.caelum.estoque.modelo.item.*;
+import java.util.List;
 
 @WebService
 public class EstoqueWS {
@@ -29,7 +27,7 @@ public class EstoqueWS {
 
     @WebMethod(operationName = "CadastrarItem")
     @WebResult(name = "item")
-    public Item cadastrarItem(@WebParam(name = "item") Item item) {
+    public Item cadastrarItem(@WebParam(name = "token", header = true) TokenUsuario token, @WebParam(name = "item") Item item) {
 
         System.out.println("Cadastrando Item: " + item);
         this.dao.cadastrar(item);
