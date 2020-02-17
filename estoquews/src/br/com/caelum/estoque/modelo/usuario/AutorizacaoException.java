@@ -1,6 +1,15 @@
 package br.com.caelum.estoque.modelo.usuario;
 
-public class AutorizacaoException extends Throwable {
-    public AutorizacaoException(String s) {
+import javax.xml.ws.WebFault;
+
+@WebFault(name = "AutorizacaoFault")
+public class AutorizacaoException extends Exception {
+
+    public AutorizacaoException(String mensagem) {
+        super(mensagem);
+    }
+
+    public String getFaultInfo(){
+        return "Token inválido!!!";
     }
 }

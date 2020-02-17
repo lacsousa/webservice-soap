@@ -129,13 +129,13 @@
    <soapenv:Body>\r
       <ws:todosOsItens/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.estoque.caelum.com.br/EstoqueWS/todosOsItensRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8b19eaad-aaee-4347-814c-d28df34e7ffd" isOneWay="false" action="" name="CadastrarItem" bindingOperationName="CadastrarItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7c5cd6d-a11b-458a-adf1-581f98e8be4d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/estoquews</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.estoque.caelum.com.br/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.estoque.caelum.com.br/EstoqueWS/todosOsItensRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8b19eaad-aaee-4347-814c-d28df34e7ffd" isOneWay="false" action="" name="CadastrarItem" bindingOperationName="CadastrarItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e1843d8f-abb9-4ecb-9c73-c89984577d7d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/estoquews</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.estoque.caelum.com.br/">\r
    <soapenv:Header>\r
       <ws:token>\r
          <!--Optional:-->\r
-         <dataValidade>20200213T12:58:00</dataValidade>\r
+         <dataValidade>12/31/2020</dataValidade>\r
          <!--Optional:-->\r
-         <token>AAA</token>\r
+         <token>EEE</token>\r
       </ws:token>\r
    </soapenv:Header>\r
    <soapenv:Body>\r
@@ -146,7 +146,7 @@
             <codigo>MEA</codigo>\r
             <!--Optional:-->\r
             <nome>MEAN</nome>\r
-            <quantidade>5</quantidade>\r
+            <quantidade>12</quantidade>\r
             <!--Optional:-->\r
             <tipo>Livro</tipo>\r
          </item>\r

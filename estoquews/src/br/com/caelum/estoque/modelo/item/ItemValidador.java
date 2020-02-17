@@ -16,26 +16,26 @@ public class ItemValidador {
 		
 		String codigo = item.getCodigo();
 		if(ehVazio(codigo) || codigo.length() != 3){
-			erros.add("Codigo invalido");
+			erros.add("Codigo inválido");
 		}
 
 		String nome = item.getNome();
 		if(ehVazio(nome) || nome.length() < 3){
-			erros.add("Nome invalido");
+			erros.add("Nome inválido");
 		}
 		
 		int quantidade = item.getQuantidade();
 		if(quantidade <= 0){
-			erros.add("Quantidade invalida");
+			erros.add("Quantidade inválida");
 		}
 		
 		String tipo = item.getTipo();
 		if(ehVazio(tipo) || !TipoItem.existe(tipo)) {
-			erros.add("Tipo invalido");
+			erros.add("Tipo inválido");
 		}
 		
 		if(!erros.isEmpty()){
-//			throw new RuntimeException("argg"); 
+//			throw new RuntimeException("arg");
 
 			throw new ItemValidadorException(erros); 
 		}

@@ -30,13 +30,18 @@ public class EstoqueWS {
 
     @WebMethod(operationName = "CadastrarItem")
     @WebResult(name = "item")
-    public Item cadastrarItem(@WebParam(name = "token", header = true) TokenUsuario token, @WebParam(name = "item") Item item) {
+    public Item cadastrarItem(@WebParam(name = "token", header = true) TokenUsuario token, @WebParam(name = "item") Item item)
+            throws AutorizacaoException {
 
         boolean tokenValido = new TokenDao().ehValido(token);
         if (!tokenValido){
-            throw new AutorizacaoException("Token inválido!!!");
+            System.out.println("Não foi possível cadastrar o item. Autorização falhou !!!" + "Token: " + token );
+            throw new AutorizacaoException("Autorização falhou !!!");
         }
-        System.out.println("Cadastrando Item: " + item);
+
+        new ItemValidador(item).validate();
+
+        System.out.println("Cadastrando Item: " + item + ", Token: " + token);
         this.dao.cadastrar(item);
         return item;
     }

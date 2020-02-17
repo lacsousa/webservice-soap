@@ -1,10 +1,18 @@
 package br.com.caelum.estoque.modelo.usuario;
 
+import br.com.caelum.estoque.util.DateAdapter;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Date;
 
 public class TokenUsuario {
 
+	@XmlElement(required = true)
 	private String token;
+
+	@XmlElement(required = true)
+	@XmlJavaTypeAdapter(DateAdapter.class)
 	private Date dataValidade;
 	
 	//JAX-B precisa desse construtor
@@ -16,21 +24,21 @@ public class TokenUsuario {
 		this.dataValidade = dataValidade;
 	}
 
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-	public Date getDataValidade() {
-		return dataValidade;
-	}
-
-	public void setDataValidade(Date dataValidade) {
-		this.dataValidade = dataValidade;
-	}
+//	public String getToken() {
+//		return token;
+//	}
+//
+//	public void setToken(String token) {
+//		this.token = token;
+//	}
+//
+//	public Date getDataValidade() {
+//		return dataValidade;
+//	}
+//
+//	public void setDataValidade(Date dataValidade) {
+//		this.dataValidade = dataValidade;
+//	}
 	
 
 	@Override
